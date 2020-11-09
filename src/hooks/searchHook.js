@@ -1,18 +1,21 @@
 import yelp from '../api/yelp'
 import React , {useState , useEffect} from 'react'
-
 export default function searchHook (){
 
     const [result , setResults] = useState([])
     const [error , setError] = useState(null)
-    
+    const [currentLocation , setLocation] = useState({
+        lat: 43.65,
+        long:-79.38
+    })
     const fetchRequest = async (search)=>{
        try {
         const response = await yelp.get('/search' , {
             params:{
                limit:50,
                term: search,
-               location:'mississauga' 
+               latitude:currentLocation.lat,
+               longitude:currentLocation.long
             }
         })
          setResults(response.data.businesses)
@@ -24,8 +27,23 @@ export default function searchHook (){
     
     
     useEffect(()=>{
-      initialRequest()
+        let locationOptions = {
+            timeOut: 20000,
+            maximumAge: 60*60
+        }
+       navigator.geolocation.getCurrentPosition(gotLocation , gotError , locationOptions)
+       initialRequest()
     },[])
+
+    const gotLocation = (location)=>{
+         setLocation({
+            lat: location.coords.latitude,
+            long: location.coords.longitude
+        })
+        }
+        const gotError = (error)=>{
+        console.log(error)
+        }
     
     const initialRequest = async()=>{
            try {
@@ -33,7 +51,8 @@ export default function searchHook (){
                 params:{
                     limit:50,
                     term: 'shops',
-                    location:'mississauga' 
+                    latitude:currentLocation.lat,
+                    longitude:currentLocation.long
                  }
             })
         setResults(response.data.businesses)
