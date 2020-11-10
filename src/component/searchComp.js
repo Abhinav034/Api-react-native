@@ -6,9 +6,10 @@ import { EvilIcons } from '@expo/vector-icons';
 const Search = ({value , onSearch , onEndEditing})=>{
 
 return <View style={style.direction}>
-    <EvilIcons name="search" size={30} color="black" style={{marginVertical:9}} />
+    <EvilIcons name="search" size={30} color="#eb9500" style={{marginVertical:9}} />
 <TextInput style={style.search} 
-placeholder="Search Here" 
+placeholder="What's Nearby..." 
+placeholderTextColor="#eb9500"
 value={value} 
 onChangeText={(searchText)=>onSearch(searchText)}
 onEndEditing={onEndEditing}
@@ -26,13 +27,14 @@ const style = StyleSheet.create({
             flex: 1,
             borderRadius:5,
             paddingHorizontal:2, 
-           fontSize:17
+           fontSize:17,
+           backgroundColor: '#2b2b2b'
         },
         direction:{
             flexDirection:'row',
-            borderColor:'#dbdbdb',
+            borderColor:'#2b2b2b',
             borderWidth: 1,
-            backgroundColor: '#f0EEEE',
+            backgroundColor: '#2b2b2b',
             borderRadius:5,
             marginVertical:5,
             marginHorizontal:5

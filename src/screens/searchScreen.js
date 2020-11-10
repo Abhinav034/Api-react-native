@@ -20,12 +20,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingHorizontal:5, 
         marginVertical:10,
+        color:'#fff'
     },
     reviewTag:{
         fontSize: 15,
         paddingHorizontal:5, 
         marginVertical:10,
-        color: '#c47900'
+        color: '#eb9500'
     },
     viewTag:{
         borderColor: 'grey',
@@ -34,14 +35,14 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         marginLeft:2,
         marginRight:2,
-        backgroundColor:'#dddddd'
-    }
+        backgroundColor:'#2b2b2b'
+    },
 })
 
 
-return <View>
+return <View style={{backgroundColor:'#000'}}>
 <SearchBar value={search} onSearch={(searchText)=> userSearch(searchText)} onEndEditing={()=>fetchRequest(search)}/>
-{error?<Text>{error}</Text>:null}
+{error?<Text style={styles.reviewTag}>{error}</Text>:null}
 <FlatList
 data = {result}
 renderItem={({item})=>{

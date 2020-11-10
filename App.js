@@ -8,7 +8,12 @@ const navigator = createStackNavigator({
 },{
   initialRouteName: "SearchScreen",
   defaultNavigationOptions:{
-    title: "React Project"
+    title: "React Project",
+    headerTintColor: '#fff',
+    headerStyle: {
+      backgroundColor: '#000'
+    },
+    
   }
   
 })
