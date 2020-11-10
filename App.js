@@ -1,10 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import SearchScreen from './src/screens/searchScreen'
+import DetailScreen from './src/screens/detailScreen'
 const navigator = createStackNavigator({
-  SearchScreen:SearchScreen
+  SearchScreen:SearchScreen,
+  DetailScreen:DetailScreen
 },{
   initialRouteName: "SearchScreen",
   defaultNavigationOptions:{

@@ -28,6 +28,7 @@ export default function searchHook (){
     
     useEffect(()=>{
         let locationOptions = {
+            enableHighAccuracy: true,
             timeOut: 20000,
             maximumAge: 60*60
         }
@@ -40,9 +41,10 @@ export default function searchHook (){
             lat: location.coords.latitude,
             long: location.coords.longitude
         })
+        console.log(location)
         }
-        const gotError = (error)=>{
-        console.log(error)
+        const gotError = ()=>{
+        setError('Unable to fetch location')
         }
     
     const initialRequest = async()=>{
