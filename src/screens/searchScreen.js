@@ -46,13 +46,15 @@ return <View style={{backgroundColor:'#000'}}>
 <FlatList
 data = {result}
 renderItem={({item})=>{
-    return <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen',{id: item.id})}>
+    console.log("---------");
+    console.log(item);
+    return <TouchableOpacity onPress={()=>navigation.navigate('DetailScreen',{id: item})}>
         <View style = {styles.viewTag}>
-<Image source={item.image_url?{uri:item.image_url}:{uri:'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'}}  style={styles.imageTag}/>
-<Text style={styles.addressTag}>{item.name}</Text>
-<Text style={styles.addressTag}>{item.location.address1}</Text>
-<Text style={styles.reviewTag}>Average of:{item.rating} stars from {item.review_count} reviews </Text>
- </View>
+            <Image source={item.image_url?{uri:item.image_url}:{uri:'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'}}  style={styles.imageTag}/>
+            <Text style={styles.addressTag}>{item.name}</Text>
+            <Text style={styles.addressTag}>{item.location.address1}</Text>
+            <Text style={styles.reviewTag}>Average of:{item.rating} stars from {item.review_count} reviews </Text>
+        </View>
 
 
     </TouchableOpacity>
