@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, View, StyleSheet, Dimensions} from 'react-native'
 import MapView, { Marker } from 'react-native-maps' 
+import MapViewDirections from 'react-native-maps-directions'
+
 
 
 const MapScreen = ({navigation})=>{
@@ -43,6 +45,19 @@ const MapScreen = ({navigation})=>{
             description={"description 2"}
          /> */}
             
+            <MapViewDirections
+            origin = { { 
+                latitude: 43.58,
+                longitude: -79.64
+            }}
+            destination = { {
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude
+            }}
+            apikey = 'PASTE_API_KEY_HERE'
+            strokeWidth = {3}
+            strokeColor = "hotpink"
+            />
         </MapView>
         {/* <Text>{navigator.geolocation.latitude}</Text> */}
         </View>
