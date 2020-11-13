@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text , Image , Button, View, StyleSheet, Dimensions} from 'react-native'
+import {Text , Image , Button, View, StyleSheet, Dimensions, Linking} from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 
 const DetailScreen = ({navigation})=>{
@@ -49,6 +49,11 @@ return <View style = {styles.background}>
             <Button title="Get Directions" color="white"/>
         </TouchableHighlight>
     </View>
+    <View style={styles.btnVisitSite}>
+        <TouchableHighlight onPress = {() => Linking.openURL(item.url)}>
+            <Button title="Visit Us" color="white"/>
+        </TouchableHighlight>
+    </View>
 </View>
 
 }
@@ -82,6 +87,14 @@ const styles = StyleSheet.create ({
         fontWeight: "bold",
         bottom: 50,
         right: 20,
+    },
+    btnVisitSite: {
+        position: "absolute",
+        backgroundColor: '#eb9500',
+        fontWeight: "bold",
+        bottom: 50,
+        left: 20,
+        paddingHorizontal: 10
     },
     timing:{
         fontSize: 20,
