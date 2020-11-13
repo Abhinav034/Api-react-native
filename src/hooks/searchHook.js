@@ -9,8 +9,7 @@ export default function searchHook (){
         long:-79.38
     })
     const fetchRequest = async (search)=>{
-        console.log("**********************");
-        console.log(currentLocation.lat)
+        
        try {
            
         const response = await yelp.get('/search' , {
