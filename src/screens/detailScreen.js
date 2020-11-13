@@ -46,12 +46,12 @@ return <View style = {styles.background}>
 
     <View style={styles.btnDirections}>
         <TouchableHighlight onPress = {() => navigation.navigate('MapScreen', {coordinates: item.coordinates})}>
-            <Button title="Get Directions" color="white"/>
+            <Button title="Get Directions" color="green"/>
         </TouchableHighlight>
     </View>
     <View style={styles.btnVisitSite}>
         <TouchableHighlight onPress = {() => Linking.openURL(item.url)}>
-            <Button title="Visit Us" color="white"/>
+            <Button title="Visit Us" color='blue'/>
         </TouchableHighlight>
     </View>
 </View>
@@ -94,7 +94,6 @@ const styles = StyleSheet.create ({
         fontWeight: "bold",
         bottom: 50,
         left: 20,
-        paddingHorizontal: 10
     },
     timing:{
         fontSize: 20,
