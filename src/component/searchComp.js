@@ -28,7 +28,8 @@ const style = StyleSheet.create({
             borderRadius:5,
             paddingHorizontal:2, 
            fontSize:17,
-           backgroundColor: '#2b2b2b'
+           backgroundColor: '#2b2b2b',
+           color:'#eb9500'
         },
         direction:{
             flexDirection:'row',

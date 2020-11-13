@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text , Image , Button, View, StyleSheet, Dimensions} from 'react-native'
+import { Button, View, StyleSheet, Dimensions} from 'react-native'
 import MapView, { Marker } from 'react-native-maps' 
 
 
@@ -11,6 +11,7 @@ const MapScreen = ({navigation})=>{
         <View>
         
         <MapView
+            showsUserLocation
             style = {styles.map}
             loadingEnable={true}
             region={
