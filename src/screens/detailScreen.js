@@ -19,13 +19,13 @@ item.categories.forEach(item => {
 });
 
 
-console.log(cat);
+console.log(item);
 
 
 return <View style = {styles.background}>
     <Image source={item.image_url?{uri:item.image_url}:{uri:'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'}}  style={styles.imageTag}/>
     <Text style = {styles.heading}>{item.name}</Text>
-    <Text>{address}</Text>
+    <Text style = {styles.timing}>{address}</Text>
     <Text style = {styles.timing}>{(item.is_closed) ? "Closed" : "Open now"}</Text>
     
     <View style = {styles.outerCircle}>
@@ -45,8 +45,8 @@ return <View style = {styles.background}>
 
 
     <View style={styles.btnDirections}>
-        <TouchableHighlight onPress = {() => alert('Button clicked')}>
-            <Button title="Get Directions" color="#eb9500"/>
+        <TouchableHighlight onPress = {() => navigation.navigate('MapScreen', {coordinates: item.coordinates})}>
+            <Button title="Get Directions" color="white"/>
         </TouchableHighlight>
     </View>
 </View>
@@ -78,13 +78,14 @@ const styles = StyleSheet.create ({
     btnDirections: {
         // right: 0,
         position: "absolute",
-        backgroundColor: 'grey',
+        backgroundColor: '#eb9500',
         fontWeight: "bold",
         bottom: 50,
         right: 20,
     },
     timing:{
         fontSize: 20,
+        color: 'white',
     },
     outerCircle:{
         flexDirection: "row",

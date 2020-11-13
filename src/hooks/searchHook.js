@@ -9,7 +9,10 @@ export default function searchHook (){
         long:-79.38
     })
     const fetchRequest = async (search)=>{
+        console.log("**********************");
+        console.log(currentLocation.lat)
        try {
+           
         const response = await yelp.get('/search' , {
             params:{
                limit:50,
@@ -41,7 +44,7 @@ export default function searchHook (){
             lat: location.coords.latitude,
             long: location.coords.longitude
         })
-        console.log(location)
+        
         }
         const gotError = ()=>{
         setError('Unable to fetch location')
