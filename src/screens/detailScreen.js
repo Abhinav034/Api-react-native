@@ -18,10 +18,6 @@ item.categories.forEach(item => {
     cat.push(<li>{item.title}</li>)
 });
 
-
-console.log(item);
-
-
 return <View style = {styles.background}>
     <Image source={item.image_url?{uri:item.image_url}:{uri:'https://1080motion.com/wp-content/uploads/2018/06/NoImageFound.jpg.png'}}  style={styles.imageTag}/>
     <Text style = {styles.heading}>{item.name}</Text>
@@ -39,9 +35,7 @@ return <View style = {styles.background}>
         </View>
     </View>
 
-    {/* <Text>
-        {cat}
-    </Text> */}
+    
 
 
     <View style={styles.btnDirections}>
