@@ -67,5 +67,5 @@ export default function searchHook (){
            }
     }
 
-    return [fetchRequest ,error,result ]
+    return [fetchRequest ,error,result,currentLocation ]
 }
