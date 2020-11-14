@@ -11,7 +11,7 @@ const navigator = createStackNavigator({
 },{
   initialRouteName: "SearchScreen",
   defaultNavigationOptions:{
-    title: "React Project",
+    title: "Near You",
     headerTintColor: '#fff',
     headerStyle: {
       backgroundColor: '#000'
