@@ -56,7 +56,7 @@ const MapScreen = ({navigation})=>{
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude
             }}
-            apikey = 'DIRECTIONS KEY HERE !!_____@@@@@@@@@@%%%%%%%%$$$$$$$$$$$'
+            apikey = 'PASTE_MAPS_KEY'
             strokeWidth = {3}
             strokeColor = "red"
             />
