@@ -17,12 +17,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "iosPro"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "ReactProject.apk",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDMFV_37v6int0AOA3oEmWsWD30jaIm3Kk"
+        }
       }
     },
     "web": {
